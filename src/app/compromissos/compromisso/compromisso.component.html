@@ -1,0 +1,30 @@
+<div class="container">
+
+    <div class="ui-g">
+
+      <div class="ui-g-12">
+        <h1>Compromissos</h1>
+      </div>
+
+      <div class="ui-g-12">
+        <a pButton label="Novo Compromisso"></a>
+      </div>
+
+    </div>
+
+    <br>
+
+    <div class="ui-g">
+      <div class="ui-g-12">
+        <p-dataTable [value]="compromissos" [responsive]="true">
+          <p-column field="id" header="Compromisso"></p-column>
+          <p-column field="idUsuario" header="Usuario"></p-column>
+          <p-column field="descricao" header="Descrição"></p-column>
+          <p-column field="inicio" header="Inicio"></p-column>
+          <p-column field="termino" header="Termino"></p-column>
+          <p-column field="local" header="Local"></p-column>
+        </p-dataTable>
+      </div>
+    </div>
+
+  </div>
