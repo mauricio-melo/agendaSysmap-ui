@@ -2,19 +2,23 @@
 
   <div class="ui-g">
     <div class="ui-g-12">
-      <h4>Seleciona seu usuario:</h4>
+      <h4>Escolha seu usuario:</h4>
     </div>
   </div>
 
   <div class="ui-g">
     <div class="ui-g-12">
-      <p-dropdown name="desenvolvedores" [options]="desenvolvedores"
-      placeholder="Selecione seu usuário" [(ngModel)]="usuario.id"></p-dropdown>
-    </div>
-
-
-    <div class="ui-g-12 ajuste">
-      <a pButton label="Confirmar" routerLink="/compromisso-usuario"></a>
+      <p-dataTable [value]="desenvolvedores" [responsive]="true">
+        <p-column field="id" header="Codigo"></p-column>
+        <p-column field="nome" header="Nome"></p-column>
+        <p-column field="perfil" header="Perfil"></p-column>
+        <p-column>
+            <ng-template let-dev="rowData" pTemplate="body">
+              <a pButton label="Compromissos"
+                [routerLink]="['/desenvolvedor/compromissos/usuario/', dev.id]"></a>
+            </ng-template>
+        </p-column>
+      </p-dataTable>
     </div>
   </div>
 

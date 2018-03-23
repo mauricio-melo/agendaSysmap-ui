@@ -1,21 +1,25 @@
 <div class="container">
 
-  <div class="ui-g">
-    <div class="ui-g-12">
-      <h4>Seleciona seu usuario:</h4>
+    <div class="ui-g">
+      <div class="ui-g-12">
+        <h4>Escolha seu usuario:</h4>
+      </div>
     </div>
+
+    <div class="ui-g">
+      <div class="ui-g-12">
+        <p-dataTable [value]="lideres" [responsive]="true">
+          <p-column field="id" header="Codigo"></p-column>
+          <p-column field="nome" header="Nome"></p-column>
+          <p-column field="perfil" header="Perfil"></p-column>
+          <p-column>
+              <ng-template let-dev="rowData" pTemplate="body">
+                <a pButton label="Compromissos"
+                  [routerLink]="['/desenvolvedor/compromissos/usuario/', dev.id]"></a>
+              </ng-template>
+          </p-column>
+        </p-dataTable>
+      </div>
+    </div>
+
   </div>
-
-  <div class="ui-g">
-    <div class="ui-g-12">
-      <p-dropdown name="lideres" [options]="lideres"
-      placeholder="Selecione seu usuário" [(ngModel)]="usuario.id"></p-dropdown>
-    </div>
-
-
-    <div class="ui-g-12 ajuste">
-      <a pButton label="Confirmar" routerLink="/compromisso-equipe"></a>
-    </div>
-  </div>
-
-</div>

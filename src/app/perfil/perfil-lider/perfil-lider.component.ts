@@ -19,14 +19,13 @@ export class PerfilLiderComponent implements OnInit  {
   ) { }
 
   ngOnInit() {
-    this.carregarLideres();
+    this.carregarDesenvolvedores();
   }
 
-  carregarLideres() {
-    return this.usuarioService.listarTodosLideres()
-      .then(lideres => {
-        this.lideres = lideres
-          .map(d => ({ label: d.nome, value: d.id }));
+  carregarDesenvolvedores() {
+    this.usuarioService.listarTodosLideres()
+      .then(resultado => {
+        this.lideres = resultado;
       });
   }
 

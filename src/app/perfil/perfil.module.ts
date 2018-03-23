@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
+import { DataTableModule } from 'primeng/components/datatable/datatable';
 
 import { PerfilEscolhaComponent } from './perfil-escolha/perfil-escolha.component';
 import { PerfilDesenvolvedorComponent } from './perfil-desenvolvedor/perfil-desenvolvedor.component';
@@ -20,7 +21,8 @@ import {DropdownModule} from 'primeng/dropdown';
     DropdownModule,
     BrowserAnimationsModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+    DataTableModule
   ],
   declarations: [PerfilEscolhaComponent, PerfilDesenvolvedorComponent, PerfilLiderComponent],
   exports: [

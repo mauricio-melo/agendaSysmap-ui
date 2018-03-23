@@ -26,10 +26,9 @@ export class PerfilDesenvolvedorComponent implements OnInit  {
   }
 
   carregarDesenvolvedores() {
-    return this.usuarioService.listarTodosDesenvolvedores()
+    this.usuarioService.listarTodosDesenvolvedores()
       .then(resultado => {
-        this.desenvolvedores = resultado
-          .map(d => ({ label: d.nome, value: d.id }));
+        this.desenvolvedores = resultado;
       });
   }
 

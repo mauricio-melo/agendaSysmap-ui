@@ -9,10 +9,11 @@ import { CompromissoUsuarioComponent } from './compromissos/compromisso-usuario/
 
 const routes: Routes = [
   { path: '', component: PerfilEscolhaComponent},
-  { path: 'perfil-desenvolvedor', component: PerfilDesenvolvedorComponent},
-  { path: 'perfil-lider', component: PerfilLiderComponent},
-  { path: 'compromisso-equipe', component: CompromissoEquipeComponent},
-  { path: 'compromisso-usuario', component: CompromissoUsuarioComponent}
+  { path: 'desenvolvedor', component: PerfilDesenvolvedorComponent},
+  { path: 'lider', component: PerfilLiderComponent},
+  { path: 'lider/compromissos/equipe/:id', component: CompromissoEquipeComponent},
+  { path: 'desenvolvedor/compromissos/usuario/:id', component: CompromissoUsuarioComponent},
+
 ];
 
 @NgModule({
