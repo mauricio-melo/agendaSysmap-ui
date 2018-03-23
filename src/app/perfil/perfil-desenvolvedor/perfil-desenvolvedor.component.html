@@ -1,0 +1,24 @@
+<div class="container">
+
+  <div class="ui-g">
+    <div class="ui-g-12">
+      <h4>Seleciona seu usuario:</h4>
+    </div>
+  </div>
+
+  <div class="ui-g">
+      <div class="ui-g-12">
+        <p-dropdown name="desenvolvedores" [options]="desenvolvedores"
+          placeholder="Selecione seu usuário" optionLabel="name"
+          [(ngModel)]="usuario.id"></p-dropdown>
+      </div>
+
+      <div class="ui-g-12 ajuste">
+        <a pButton label="Confirmar" routerLink=""></a>
+      </div>
+  </div>
+
+</div>
+
+
+

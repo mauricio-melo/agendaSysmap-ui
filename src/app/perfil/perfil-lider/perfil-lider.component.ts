@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./perfil-lider.component.css']
 })
 export class PerfilLiderComponent {
+
   lideres = [
     {name: 'Bruno'},
     {name: 'Fabio'},
