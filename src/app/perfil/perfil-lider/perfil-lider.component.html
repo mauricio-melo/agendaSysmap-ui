@@ -6,17 +6,20 @@
     </div>
   </div>
 
-
   <div class="ui-g">
-    <div class="ui-g-12">
-      <p-dropdown [options]="lideres" placeholder="Selecione seu usuário" optionLabel="name"></p-dropdown>
-    </div>
+      <div class="ui-g-12">
+        <p-dropdown name="lideres" [options]="lideres"
+          placeholder="Selecione seu usuário"
+          [(ngModel)]="usuario.id"></p-dropdown>
+      </div>
 
-    <div class="ui-g-12 ajuste">
-      <a pButton label="Confirmar" routerLink=""></a>
-    </div>
+
+      <div class="ui-g-12 ajuste">
+        <a pButton label="Confirmar" routerLink=""></a>
+      </div>
   </div>
 
-
-
 </div>
+
+
+

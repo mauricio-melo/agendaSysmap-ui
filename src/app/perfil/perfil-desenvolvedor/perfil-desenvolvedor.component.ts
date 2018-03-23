@@ -12,21 +12,12 @@ import { FormControl } from '@angular/forms';
   providers: [UsuarioService]
 })
 export class PerfilDesenvolvedorComponent implements OnInit  {
-  /*desenvolvedores = [
-    {name: 'Mauricio'},
-    {name: 'Agnaldo'},
-    {name: 'Lucas'},
-    {name: 'Thiago'},
-  ];/*/
 
   desenvolvedores = [];
   usuario = new Usuario();
 
   constructor(
     private usuarioService: UsuarioService,
-    private route: ActivatedRoute,
-    private router: Router,
-    private title: Title
   ) { }
 
   ngOnInit() {
@@ -40,5 +31,6 @@ export class PerfilDesenvolvedorComponent implements OnInit  {
           .map(d => ({ label: d.nome, value: d.id }));
       });
   }
+
 }
 

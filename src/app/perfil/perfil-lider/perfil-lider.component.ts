@@ -1,16 +1,33 @@
 import { Component, OnInit } from '@angular/core';
 
+import { UsuarioService } from '../usuario.service';
+import { Usuario } from '../model';
+
 @Component({
   selector: 'app-perfil-lider',
   templateUrl: './perfil-lider.component.html',
-  styleUrls: ['./perfil-lider.component.css']
+  styleUrls: ['./perfil-lider.component.css'],
+  providers: [UsuarioService]
 })
-export class PerfilLiderComponent {
+export class PerfilLiderComponent implements OnInit  {
 
-  lideres = [
-    {name: 'Bruno'},
-    {name: 'Fabio'},
-    {name: 'Vançam'},
-  ];
+  lideres = [];
+  usuario = new Usuario();
+
+  constructor(
+    private usuarioService: UsuarioService,
+  ) { }
+
+  ngOnInit() {
+    this.carregarLideres();
+  }
+
+  carregarLideres() {
+    return this.usuarioService.listarTodosLideres()
+      .then(lideres => {
+        this.lideres = lideres
+          .map(d => ({ label: d.nome, value: d.id }));
+      });
+  }
 
 }

@@ -4,6 +4,7 @@ import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
 import { environment } from './../../environments/environment';
+import { Usuario } from './model';
 
 @Injectable()
 export class UsuarioService {
@@ -11,15 +12,26 @@ export class UsuarioService {
   usuariosUrl: string;
 
   constructor(private http: Http) {
-    this.usuariosUrl = `${environment.apiUrl}/usuario/perfil/desenvolvedor`;
+    this.usuariosUrl = `${environment.apiUrl}/usuario/perfil`;
    }
 
    listarTodosDesenvolvedores(): Promise<any> {
-    return this.http.get(this.usuariosUrl)
+    return this.http.get(`${this.usuariosUrl}/desenvolvedor`)
       .toPromise()
-      .then(response => response.json());
+      .then(response => {
+        const usuario = response.json() as Usuario;
+        return usuario;
+      });
   }
 
+  listarTodosLideres(): Promise<any> {
+    return this.http.get(`${this.usuariosUrl}/lider`)
+      .toPromise()
+      .then(response => {
+        const usuario = response.json() as Usuario;
+        return usuario;
+      });
+  }
 
 
 }
