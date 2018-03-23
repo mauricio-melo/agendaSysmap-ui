@@ -37,5 +37,4 @@ export class CompromissoUsuarioComponent implements OnInit {
         this.compromissos = resultado;
       });
   }
-
 }

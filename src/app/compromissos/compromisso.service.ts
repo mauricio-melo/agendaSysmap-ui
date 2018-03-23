@@ -24,6 +24,15 @@ export class CompromissoService {
       });
    }
 
+   listarCompromissosPorEquipeId(id: number): Promise<any> {
+    return this.http.get(`${this.compromissoUrl}/equipe/${id}`)
+      .toPromise()
+      .then(response => {
+        const compromisso = response.json() as Compromisso;
+        return compromisso;
+      });
+   }
+
    listarCompromissosPorUsuarioId(id: number): Promise<any> {
     return this.http.get(`${this.compromissoUrl}/usuario/${id}`)
       .toPromise()
