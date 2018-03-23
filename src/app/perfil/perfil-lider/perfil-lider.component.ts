@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { UsuarioService } from '../usuario.service';
-import { Usuario } from '../model';
+import { Usuario } from '../../core/model';
 
 @Component({
   selector: 'app-perfil-lider',
@@ -12,7 +12,7 @@ import { Usuario } from '../model';
 export class PerfilLiderComponent implements OnInit  {
 
   lideres = [];
-  usuario = new Usuario();
+  usuario = new Usuario;
 
   constructor(
     private usuarioService: UsuarioService,

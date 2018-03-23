@@ -1,8 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CompromissoComponent } from './compromisso/compromisso.component';
+
 import { DropdownModule } from 'primeng/components/dropdown/dropdown';
 import { DataTableModule } from 'primeng/components/datatable/datatable';
+
+
+import { CompromissoEquipeComponent } from './compromisso-equipe/compromisso-equipe.component';
+import { CompromissoUsuarioComponent } from './compromisso-usuario/compromisso-usuario.component';
 
 @NgModule({
   imports: [
@@ -10,9 +14,10 @@ import { DataTableModule } from 'primeng/components/datatable/datatable';
     DropdownModule,
     DataTableModule
   ],
-  declarations: [CompromissoComponent],
+  declarations: [CompromissoEquipeComponent, CompromissoUsuarioComponent],
   exports: [
-    CompromissoComponent
+    CompromissoEquipeComponent,
+    CompromissoUsuarioComponent
   ]
 })
 export class CompromissosModule { }

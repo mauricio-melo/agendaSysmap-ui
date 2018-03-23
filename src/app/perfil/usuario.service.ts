@@ -4,7 +4,7 @@ import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
 import { environment } from './../../environments/environment';
-import { Usuario } from './model';
+import { Usuario } from '../core/model';
 
 @Injectable()
 export class UsuarioService {
