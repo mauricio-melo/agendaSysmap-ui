@@ -1,0 +1,49 @@
+<div class="container">
+    <form #f="ngForm" autocomplete="off" (ngSubmit)="salvarOuEditar(f)">
+
+      <div class="ui-g">
+        <div class="ui-g-12">
+          <h1>Cadastro de Compromisso</h1>
+        </div>
+
+
+        <div class="ui-g-12 ui-md-9 ui-fluid">
+          <label>Descrição</label>
+          <input pInputText type="text" name="descricao" [(ngModel)]="compromisso.descricao">
+        </div>
+
+        <div class="ui-g-6 ui-md-3 ui-fluid">
+          <label>Inicio</label>
+          <p-calendar name="inicio" [(ngModel)]="compromisso.inicio"
+          [showIcon]="true" dateFormat="yy/mm/dd"></p-calendar>
+          <span style="margin-left:35px" required></span>
+        </div>
+
+        <div class="ui-g-6 ui-md-3 ui-fluid">
+          <label>Termino</label>
+          <p-calendar name="termino" [(ngModel)]="compromisso.termino"
+          [showIcon]="true" dateFormat="yy/mm/dd"></p-calendar>
+          <span style="margin-left:35px" required></span>
+        </div>
+
+        <div class="ui-g-12 ui-md-6 ui-fluid">
+          <label>Desenvolvedor</label>
+          <p-dropdown name="desenvolvedores" [options]="desenvolvedores"
+          placeholder="Selecione" [autoWidth]="false" [(ngModel)]="compromisso.idUsuario"
+            required></p-dropdown>
+        </div>
+
+        <div class="ui-g-12 ui-md-9 ui-fluid">
+            <label>Local</label>
+            <input pInputText type="text" name="local" [(ngModel)]="compromisso.local">
+          </div>
+
+        <div class="ui-g-12">
+          <button pButton type="submit" label="Salvar" [disabled]="f.invalid"></button>
+          <button pButton type="button" label="Novo" class="ui-button-info" (click)="novo(f)"></button>
+          <a routerLink="">Voltar para a pesquisa</a>
+        </div>
+      </div>
+
+    </form>
+  </div>

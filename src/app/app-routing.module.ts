@@ -5,6 +5,8 @@ import { PerfilDesenvolvedorComponent } from './perfil/perfil-desenvolvedor/perf
 import { PerfilLiderComponent } from './perfil/perfil-lider/perfil-lider.component';
 import { CompromissoEquipeComponent } from './compromissos/compromisso-equipe/compromisso-equipe.component';
 import { CompromissoUsuarioComponent } from './compromissos/compromisso-usuario/compromisso-usuario.component';
+import { CompromissoCadastroDevComponent } from './compromissos/compromisso-cadastro-dev/compromisso-cadastro-dev.component';
+import { CompromissoCadastroEquipeComponent } from './compromissos/compromisso-cadastro-equipe/compromisso-cadastro-equipe.component';
 
 
 const routes: Routes = [
@@ -13,7 +15,10 @@ const routes: Routes = [
   { path: 'lider', component: PerfilLiderComponent},
   { path: 'lider/compromissos/equipe/:id', component: CompromissoEquipeComponent},
   { path: 'desenvolvedor/compromissos/usuario/:id', component: CompromissoUsuarioComponent},
-
+  { path: 'desenvolvedor/compromissos/usuario/:id/:id', component: CompromissoCadastroDevComponent},
+  { path: 'desenvolvedor/compromissos/usuario/novoCompromisso', component: CompromissoCadastroDevComponent},
+  { path: 'lider/compromissos/equipe/:id/:id', component: CompromissoCadastroEquipeComponent},
+  { path: 'lider/compromissos/equipe/novoCompromisso', component: CompromissoCadastroEquipeComponent}
 ];
 
 @NgModule({
