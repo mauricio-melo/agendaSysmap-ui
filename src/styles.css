@@ -11,7 +11,22 @@ label{
 .container{
   max-width: 1170px;
   margin: 0 auto; /*centraliza a div*/
+
+}
+
+.center{
   text-align: center;
+}
+
+.teste{
+  max-width: 1170px;
+  margin: 0 auto; /*centraliza a div*/
+  text-align: left;
+}
+
+.containerform{
+  max-width: 1170px;
+  margin: 0 auto; /*centraliza a div*/
 }
 
 .ajuste{

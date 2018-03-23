@@ -10,7 +10,8 @@ import { FormControl } from '@angular/forms';
 @Component({
   selector: 'app-compromisso-cadastro-dev',
   templateUrl: './compromisso-cadastro-dev.component.html',
-  styleUrls: ['./compromisso-cadastro-dev.component.css']
+  styleUrls: ['./compromisso-cadastro-dev.component.css'],
+  providers: [CompromissoService]
 })
 export class CompromissoCadastroDevComponent implements OnInit {
 
@@ -19,7 +20,6 @@ export class CompromissoCadastroDevComponent implements OnInit {
 
   constructor(
     private compromissoService: CompromissoService,
-    private usuarioService: UsuarioService,
     private route: ActivatedRoute,
     private router: Router,
     private title: Title
