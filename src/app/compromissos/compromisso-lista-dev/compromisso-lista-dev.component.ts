@@ -14,6 +14,7 @@ export class CompromissoListaDevComponent implements OnInit {
 
   compromissos = [];
   compromisso = new Compromisso;
+  id: number;
 
   constructor(
     private compromissoService: CompromissoService,
@@ -24,6 +25,7 @@ export class CompromissoListaDevComponent implements OnInit {
 
   ngOnInit() {
     const id = this.route.snapshot.params['id'];
+    this.id = id;
 
     this.title.setTitle('Compromissos Desenvolvedor');
 
@@ -36,6 +38,10 @@ export class CompromissoListaDevComponent implements OnInit {
       .then(resultado => {
         this.compromissos = resultado;
       });
+  }
+
+  novo() {
+    this.router.navigate(['/desenvolvedor/compromissos/usuario/dev/novoCompromisso/', this.id]);
   }
 }
 

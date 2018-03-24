@@ -26,20 +26,28 @@ export class CompromissoCadastroDevComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    const idCompromisso = this.route.snapshot.params['idCompromisso'];
     const id = this.route.snapshot.params['id'];
 
     this.title.setTitle('Novo Compromisso');
 
-    this.carregarDesenvolvedores();
+    // this.carregarDesenvolvedor(idCompromisso);
+
+    this.carregarNomes(id);
+
   }
 
   get editando() {
     return Boolean(this.compromisso.id);
   }
 
-  carregarDesenvolvedores() {
-
-  }
+  /*carregarDesenvolvedor(codigo: number) {
+    this.compromissoService.buscarPorCodigo(codigo)
+      .then(compromisso => {
+        this.compromisso = compromisso;
+        this.atualizarTituloEdicao();
+      });
+  }/*/
 
   salvarOuEditar(form: FormControl) {
     if (this.editando) {
@@ -52,7 +60,7 @@ export class CompromissoCadastroDevComponent implements OnInit {
   salvar(form: FormControl) {
     this.compromissoService.salvar(this.compromisso)
       .then(compromissoAdicionado => {
-        this.router.navigate(['/lancamentos', compromissoAdicionado.id]);
+        this.router.navigate(['/desenvolvedor/compromissos/usuario/dev/', compromissoAdicionado.id]);
       });
   }
 
@@ -71,6 +79,18 @@ export class CompromissoCadastroDevComponent implements OnInit {
     }.bind(this), 1);
 
     this.router.navigate(['/desenvolvedor/compromissos/usuario/novoCompromisso']);
+  }
+
+  atualizarTituloEdicao() {
+    this.title.setTitle(`Edição do compromisso: ${this.compromisso.id}`);
+  }
+
+  carregarNomes(id: number) {
+    return this.compromissoService.listarCompromissosPorUsuarioId(id)
+      .then(resultado => {
+        this.desenvolvedores = resultado
+          .map(c => ({ label: c.nomeUsuario, value: c.idUsuario }));
+      });
   }
 
 }

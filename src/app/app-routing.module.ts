@@ -15,10 +15,10 @@ const routes: Routes = [
   { path: 'lider', component: PerfilLiderComponent},
   { path: 'lider/compromissos/equipe/:id', component: CompromissoListaEquipeComponent},
   { path: 'desenvolvedor/compromissos/usuario/:id', component: CompromissoListaDevComponent},
-  { path: 'desenvolvedor/compromissos/usuario/dev/:id', component: CompromissoCadastroDevComponent},
-  { path: 'desenvolvedor/compromissos/usuario/dev/novoCompromisso', component: CompromissoCadastroDevComponent},
+  { path: 'desenvolvedor/compromissos/usuario/dev/:idCompromisso', component: CompromissoCadastroDevComponent},
+  { path: 'desenvolvedor/compromissos/usuario/dev/novoCompromisso/:id', component: CompromissoCadastroDevComponent},
   { path: 'lider/compromissos/equipe/dev/:id', component: CompromissoCadastroEquipeComponent},
-  { path: 'lider/compromissos/equipe/dev/novoCompromisso', component: CompromissoCadastroEquipeComponent}
+  { path: 'lider/compromissos/equipe/dev/novoCompromisso/:id', component: CompromissoCadastroEquipeComponent}
 ];
 
 @NgModule({

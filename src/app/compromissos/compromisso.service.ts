@@ -55,5 +55,11 @@ export class CompromissoService {
       .then(response => response.json() as Compromisso);
   }
 
+  buscarPorCodigo(id: number): Promise<Compromisso> {
+    return this.http.get(`${this.compromissoUrl}/${id}`)
+      .toPromise()
+      .then(response => response.json() as Compromisso);
+  }
+
 
 }

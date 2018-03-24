@@ -7,7 +7,7 @@
     </div>
 
     <div class="ui-g-12">
-      <a pButton label="Novo Compromisso" routerLink="/desenvolvedor/compromissos/usuario/dev/novoCompromisso"></a>
+      <a pButton label="Novo Compromisso" (click)="novo()"></a>
     </div>
 
   </div>
@@ -16,8 +16,7 @@
     <div class="ui-g-12">
       <p-dataTable [value]="compromissos" [responsive]="true">
         <p-column field="id" header="Compromisso"></p-column>
-        <p-column field="idUsuario" header="Usuario"></p-column>
-        <p-column field="nomeUsuario" header="nomeUsuario"></p-column>
+        <p-column field="nomeUsuario" header="Nome"></p-column>
         <p-column field="descricao" header="Descrição"></p-column>
         <p-column field="inicio" header="Inicio"></p-column>
         <p-column field="termino" header="Termino"></p-column>

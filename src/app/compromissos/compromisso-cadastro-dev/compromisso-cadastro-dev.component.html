@@ -14,14 +14,16 @@
 
       <div class="ui-g-3 ui-md-3 ui-fluid">
         <label>Inicio</label>
-        <p-calendar name="inicio" [(ngModel)]="compromisso.inicio" [showIcon]="true" dateFormat="yy/mm/dd"></p-calendar>
-        <span style="margin-left:35px" required></span>
+        <p-calendar name="inicio" dateFormat="yy/mm/dd"
+          [inline]="false" [readonlyInput]="false" [showIcon]="true"
+          [(ngModel)]="compromisso.inicio" required></p-calendar>
       </div>
 
       <div class="ui-g-3 ui-md-3 ui-fluid">
         <label>Termino</label>
-        <p-calendar name="termino" [(ngModel)]="compromisso.termino" [showIcon]="true" dateFormat="yy/mm/dd"></p-calendar>
-        <span style="margin-left:35px" required></span>
+        <p-calendar name="termino" dateFormat="yy/mm/dd"
+          [inline]="false" [readonlyInput]="false" [showIcon]="true"
+          [(ngModel)]="compromisso.termino" required></p-calendar>
       </div>
 
       <div class="ui-g-3 ui-md-3 ui-fluid">
@@ -32,7 +34,7 @@
 
       <div class="ui-g-4 ui-md-4 ui-fluid">
         <label>Local</label>
-        <input pInputText type="text" name="local" [(ngModel)]="compromisso.local">
+        <input pInputText type="text" name="local" required [(ngModel)]="compromisso.local">
       </div>
 
       <div class="ui-g-12">
