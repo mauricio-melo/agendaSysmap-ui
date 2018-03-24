@@ -1,6 +1,7 @@
 export class Compromisso {
   id: number;
   idUsuario: number;
+  nomeUsuario: string;
   inicio: Date;
   termino: Date;
   descricao: string;

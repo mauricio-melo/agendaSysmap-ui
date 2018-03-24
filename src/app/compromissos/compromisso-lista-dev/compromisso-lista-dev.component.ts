@@ -5,12 +5,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 
 @Component({
-  selector: 'app-compromisso-equipe',
-  templateUrl: './compromisso-equipe.component.html',
-  styleUrls: ['./compromisso-equipe.component.css'],
+  selector: 'app-compromisso-lista-dev',
+  templateUrl: './compromisso-lista-dev.component.html',
+  styleUrls: ['./compromisso-lista-dev.component.css'],
   providers: [CompromissoService]
 })
-export class CompromissoEquipeComponent implements OnInit {
+export class CompromissoListaDevComponent implements OnInit {
 
   compromissos = [];
   compromisso = new Compromisso;
@@ -25,17 +25,17 @@ export class CompromissoEquipeComponent implements OnInit {
   ngOnInit() {
     const id = this.route.snapshot.params['id'];
 
-    this.title.setTitle('Compromissos Equipe');
+    this.title.setTitle('Compromissos Desenvolvedor');
 
-    this.listarCompromissosPorEquipeId(id);
+    this.listarCompromissosPorUsuarioId(id);
   }
 
 
-  listarCompromissosPorEquipeId(id: number) {
-    this.compromissoService.listarCompromissosPorEquipeId(id)
+  listarCompromissosPorUsuarioId(id: number) {
+    this.compromissoService.listarCompromissosPorUsuarioId(id)
       .then(resultado => {
         this.compromissos = resultado;
       });
   }
-
 }
+

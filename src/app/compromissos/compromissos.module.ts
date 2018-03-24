@@ -10,12 +10,11 @@ import { ButtonModule } from 'primeng/button';
 import { CalendarModule } from 'primeng/calendar';
 import { InputTextModule } from 'primeng/components/inputtext/inputtext';
 
-
-import { CompromissoEquipeComponent } from './compromisso-equipe/compromisso-equipe.component';
-import { CompromissoUsuarioComponent } from './compromisso-usuario/compromisso-usuario.component';
 import { CompromissoCadastroEquipeComponent } from './compromisso-cadastro-equipe/compromisso-cadastro-equipe.component';
 import { CompromissoCadastroDevComponent } from './compromisso-cadastro-dev/compromisso-cadastro-dev.component';
 import { CoreModule } from '../core/core.module';
+import { CompromissoListaDevComponent } from './compromisso-lista-dev/compromisso-lista-dev.component';
+import { CompromissoListaEquipeComponent } from './compromisso-lista-equipe/compromisso-lista-equipe.component';
 
 @NgModule({
   imports: [
@@ -30,13 +29,13 @@ import { CoreModule } from '../core/core.module';
     CoreModule
   ],
   declarations: [
-    CompromissoEquipeComponent,
-    CompromissoUsuarioComponent,
     CompromissoCadastroEquipeComponent,
-    CompromissoCadastroDevComponent],
+    CompromissoCadastroDevComponent,
+    CompromissoListaDevComponent,
+    CompromissoListaEquipeComponent],
   exports: [
-    CompromissoEquipeComponent,
-    CompromissoUsuarioComponent,
+    CompromissoListaDevComponent,
+    CompromissoListaEquipeComponent,
     CompromissoCadastroDevComponent,
     CompromissoCadastroEquipeComponent
   ]
