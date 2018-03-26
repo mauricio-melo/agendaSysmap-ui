@@ -9,6 +9,7 @@ import { DataTableModule } from 'primeng/components/datatable/datatable';
 import { ButtonModule } from 'primeng/button';
 import { CalendarModule } from 'primeng/calendar';
 import { InputTextModule } from 'primeng/components/inputtext/inputtext';
+import { TooltipModule } from 'primeng/components/tooltip/tooltip';
 
 import { CompromissoCadastroEquipeComponent } from './compromisso-cadastro-equipe/compromisso-cadastro-equipe.component';
 import { CompromissoCadastroDevComponent } from './compromisso-cadastro-dev/compromisso-cadastro-dev.component';
@@ -26,7 +27,8 @@ import { CompromissoListaEquipeComponent } from './compromisso-lista-equipe/comp
     FormsModule,
     RouterModule,
     InputTextModule,
-    CoreModule
+    CoreModule,
+    TooltipModule
   ],
   declarations: [
     CompromissoCadastroEquipeComponent,

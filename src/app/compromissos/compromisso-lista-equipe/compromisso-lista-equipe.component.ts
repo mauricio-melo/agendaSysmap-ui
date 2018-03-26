@@ -14,6 +14,7 @@ export class CompromissoListaEquipeComponent implements OnInit {
 
   compromissos = [];
   compromisso = new Compromisso;
+  id: number;
 
   constructor(
     private compromissoService: CompromissoService,
@@ -24,6 +25,7 @@ export class CompromissoListaEquipeComponent implements OnInit {
 
   ngOnInit() {
     const id = this.route.snapshot.params['id'];
+    this.id = id;
 
     this.title.setTitle('Compromissos Equipe');
 
@@ -35,6 +37,17 @@ export class CompromissoListaEquipeComponent implements OnInit {
     this.compromissoService.listarCompromissosPorEquipeId(id)
       .then(resultado => {
         this.compromissos = resultado;
+      });
+  }
+
+  novo() {
+    this.router.navigate(['/lider/compromissos/equipe/dev/novoCompromisso/', this.id]);
+  }
+
+  excluir(compromisso: any) {
+    this.compromissoService.excluir(compromisso.id)
+      .then(() => {
+        window.location.reload();
       });
   }
 

@@ -21,6 +21,12 @@
         <p-column field="inicio" header="Inicio"></p-column>
         <p-column field="termino" header="Termino"></p-column>
         <p-column field="local" header="Local"></p-column>
+        <p-column styleClass="col-acoes">
+          <ng-template let-comp="rowData" pTemplate="body">
+            <a pButton icon="fa-pencil" pTooltip="Editar" tooltipPosition="top" [routerLink]="['/desenvolvedor/compromissos/usuario/dev', comp.id]"></a>
+            <button pButton icon="fa-trash" pTooltip="Excluir" tooltipPosition="top" (click)="excluir(comp)"></button>
+          </ng-template>
+        </p-column>
       </p-dataTable>
     </div>
   </div>

@@ -29,25 +29,33 @@ export class CompromissoCadastroDevComponent implements OnInit {
     const idCompromisso = this.route.snapshot.params['idCompromisso'];
     const id = this.route.snapshot.params['id'];
 
+    /*if (id) {
+      this.carregarCompromisso(id);
+    }/*/
+
     this.title.setTitle('Novo Compromisso');
 
-    // this.carregarDesenvolvedor(idCompromisso);
+    if (idCompromisso) {
+      this.carregarCompromisso(idCompromisso);
+    }
 
-    this.carregarNomes(id);
+  }
 
+  carregarId(id: number) {
+    this.compromisso.id = id;
   }
 
   get editando() {
     return Boolean(this.compromisso.id);
   }
 
-  /*carregarDesenvolvedor(codigo: number) {
-    this.compromissoService.buscarPorCodigo(codigo)
+  carregarCompromisso(idCompromisso: number) {
+    this.compromissoService.buscarPorCodigo(idCompromisso)
       .then(compromisso => {
         this.compromisso = compromisso;
         this.atualizarTituloEdicao();
       });
-  }/*/
+  }
 
   salvarOuEditar(form: FormControl) {
     if (this.editando) {
@@ -85,12 +93,8 @@ export class CompromissoCadastroDevComponent implements OnInit {
     this.title.setTitle(`Edição do compromisso: ${this.compromisso.id}`);
   }
 
-  carregarNomes(id: number) {
-    return this.compromissoService.listarCompromissosPorUsuarioId(id)
-      .then(resultado => {
-        this.desenvolvedores = resultado
-          .map(c => ({ label: c.nomeUsuario, value: c.idUsuario }));
-      });
+  voltar() {
+    window.history.back();
   }
 
 }

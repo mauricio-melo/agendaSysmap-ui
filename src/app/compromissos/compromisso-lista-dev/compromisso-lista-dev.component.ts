@@ -4,6 +4,7 @@ import { CompromissoService } from '../compromisso.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 
+
 @Component({
   selector: 'app-compromisso-lista-dev',
   templateUrl: './compromisso-lista-dev.component.html',
@@ -43,5 +44,13 @@ export class CompromissoListaDevComponent implements OnInit {
   novo() {
     this.router.navigate(['/desenvolvedor/compromissos/usuario/dev/novoCompromisso/', this.id]);
   }
+
+  excluir(compromisso: any) {
+    this.compromissoService.excluir(compromisso.id)
+      .then(() => {
+        window.location.reload();
+      });
+  }
+
 }
 

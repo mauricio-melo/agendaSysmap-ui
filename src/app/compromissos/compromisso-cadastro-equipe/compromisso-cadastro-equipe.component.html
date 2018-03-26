@@ -1,3 +1,50 @@
-<p>
-  compromisso-cadastro-equipe works!
-</p>
+<div class="container">
+    <form #f="ngForm" autocomplete="off" (ngSubmit)="salvarOuEditar(f)">
+
+      <div class="ui-g">
+        <div class="ui-g-12 center">
+          <h1>{{ editando ? 'Edição de' : 'Novo' }} Compromisso</h1>
+        </div>
+
+        <div class="ui-g-12 ui-md-12 ui-fluid">
+          <label>Descrição</label>
+          <input pInputText type="text" name="descricao" [(ngModel)]="compromisso.descricao">
+        </div>
+
+        <div class="ui-g-3 ui-md-3 ui-fluid">
+          <label>Inicio</label>
+          <p-calendar name="inicio" dateFormat="yy/mm/dd" [inline]="false" [readonlyInput]="false" [showIcon]="true" [(ngModel)]="compromisso.inicio"
+            required></p-calendar>
+        </div>
+
+        <div class="ui-g-3 ui-md-3 ui-fluid">
+          <label>Termino</label>
+          <p-calendar name="termino" dateFormat="yy/mm/dd" [inline]="false" [readonlyInput]="false" [showIcon]="true" [(ngModel)]="compromisso.termino"
+            required></p-calendar>
+        </div>
+
+        <!--<div class="ui-g-3 ui-md-3 ui-fluid">
+          <label>Desenvolvedor</label>
+          <p-dropdown name="desenvolvedores" [options]="desenvolvedores" placeholder="Selecione" [autoWidth]="false" [(ngModel)]="compromisso.idUsuario"
+            required></p-dropdown>
+        </div>-->
+
+        <div class="ui-g-4 ui-md-4 ui-fluid">
+          <label>Usuario</label>
+          <input pInputText type="text" name="usuario" required [(ngModel)]="compromisso.idUsuario">
+        </div>
+
+        <div class="ui-g-4 ui-md-4 ui-fluid">
+          <label>Local</label>
+          <input pInputText type="text" name="local" required [(ngModel)]="compromisso.local">
+        </div>
+
+        <div class="ui-g-12">
+          <button pButton type="submit" label="Salvar" [disabled]="f.invalid"></button>
+          <button pButton type="button" label="Novo" class="ui-button-info" (click)="novo(f)"></button>
+          <a (click)="voltar()">Voltar para a pesquisa</a>
+        </div>
+      </div>
+
+    </form>
+  </div>
